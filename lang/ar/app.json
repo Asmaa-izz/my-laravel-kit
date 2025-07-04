@@ -1,0 +1,23 @@
+{
+  "welcome": "مرحباً",
+  "login": "تسجيل الدخول",
+  "logout": "تسجيل الخروج",
+  "register": "التسجيل",
+  "dashboard": "لوحة التحكم",
+  "profile": "الملف الشخصي",
+  "save": "حفظ",
+  "cancel": "إلغاء",
+  "edit": "تعديل",
+  "delete": "حذف",
+  "language": "اللغة",
+  "settings": "الإعدادات",
+  "search": "بحث",
+  "not_found": "غير موجود",
+  "submit": "إرسال",
+  "update": "تحديث",
+  "create": "إنشاء",
+  "actions": "الإجراءات",
+  "confirm": "تأكيد",
+  "yes": "نعم",
+  "no": "لا"
+}

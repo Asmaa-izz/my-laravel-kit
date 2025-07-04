@@ -6,6 +6,8 @@ export const containerClass = "w-full h-full";
 
 <script setup>
 import AppSidebar from "@/Layouts/Components/AppSidebar.vue";
+import LanguageSwitcher from "@/components/LanguageSwitcher.vue";
+import { useI18n } from 'vue-i18n'
 
 import {
     Breadcrumb,
@@ -14,15 +16,24 @@ import {
     BreadcrumbList,
     BreadcrumbPage,
     BreadcrumbSeparator,
-} from "@/Components/ui/breadcrumb";
+} from "@/components/ui/breadcrumb";
 
-import { Separator } from "@/Components/ui/separator";
+import { Separator } from "@/components/ui/separator";
 
 import {
     SidebarInset,
     SidebarProvider,
     SidebarTrigger,
-} from "@/Components/ui/sidebar";
+} from "@/components/ui/sidebar";
+
+const { t } = useI18n()
+
+defineProps({
+    title: {
+        type: String,
+        required: true
+    }
+})
 </script>
 
 <template>
@@ -40,15 +51,18 @@ import {
                         <BreadcrumbList>
                             <BreadcrumbItem class="hidden md:block">
                                 <BreadcrumbLink href="#">
-                                    Home
+                                    {{ t('app.welcome') }}
                                 </BreadcrumbLink>
                             </BreadcrumbItem>
                             <BreadcrumbSeparator class="hidden md:block" />
                             <BreadcrumbItem>
-                                <BreadcrumbPage>Title Page</BreadcrumbPage>
+                                <BreadcrumbPage>{{ title }}</BreadcrumbPage>
                             </BreadcrumbItem>
                         </BreadcrumbList>
                     </Breadcrumb>
+                </div>
+                <div class="ml-auto px-4">
+                    <LanguageSwitcher />
                 </div>
             </header>
             <div class="flex flex-1 flex-col gap-4 p-4 pt-0">

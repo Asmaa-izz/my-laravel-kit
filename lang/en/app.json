@@ -1,0 +1,23 @@
+{
+  "welcome": "Welcome",
+  "login": "Login",
+  "logout": "Logout",
+  "register": "Register",
+  "dashboard": "Dashboard",
+  "profile": "Profile",
+  "save": "Save",
+  "cancel": "Cancel",
+  "edit": "Edit",
+  "delete": "Delete",
+  "language": "Language",
+  "settings": "Settings",
+  "search": "Search",
+  "not_found": "Not Found",
+  "submit": "Submit",
+  "update": "Update",
+  "create": "Create",
+  "actions": "Actions",
+  "confirm": "Confirm",
+  "yes": "Yes",
+  "no": "No"
+}

@@ -1,15 +1,18 @@
 <script setup>
 import { Head, Link, useForm } from "@inertiajs/vue3";
 
-import { Button } from "@/Components/ui/button";
+import { Button } from "@/components/ui/button";
 import {
     Card,
     CardContent,
     CardHeader,
     CardTitle,
-} from "@/Components/ui/card";
-import { Input } from "@/Components/ui/input";
-import { Label } from "@/Components/ui/label";
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 
 const form = useForm({
     name: "",
@@ -27,7 +30,7 @@ const submit = () => {
 </script>
 
 <template>
-    <Head title="Register" />
+    <Head :title="t('app.register')" />
 
     <div
         class="flex min-h-svh flex-col items-center justify-center gap-6 bg-muted p-6 md:p-10"
@@ -36,7 +39,7 @@ const submit = () => {
             <div class="flex flex-col gap-6">
                 <Card>
                     <CardHeader class="text-center">
-                        <CardTitle class="text-xl"> Let’s get you started</CardTitle>
+                        <CardTitle class="text-xl"> Let's get you started</CardTitle>
                     </CardHeader>
                     <CardContent>
                         <form @submit.prevent="submit">
@@ -97,7 +100,7 @@ const submit = () => {
                                         </p>
                                     </div>
                                     <Button type="submit" class="w-full">
-                                        Register
+                                        {{ t('app.register') }}
                                     </Button>
                                 </div>
                                 <div class="text-center text-sm">
@@ -106,7 +109,7 @@ const submit = () => {
                                          :href="route('login')"
                                         class="underline underline-offset-4"
                                     >
-                                    Login
+                                    {{ t('app.login') }}
                                     </Link>
                                 </div>
                             </div>

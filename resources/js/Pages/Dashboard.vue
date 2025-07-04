@@ -1,15 +1,16 @@
 <script setup>
 import AppLayout from '@/Layouts/AppLayout.vue';
-
-import useAuth from '@/Composables/useAuth';
+import useAuth from '@/composables/useAuth';
+import { useI18n } from 'vue-i18n'
 
 const { can, hasRole } = useAuth()
+const { t } = useI18n()
 </script>
 
 <template>
-    <AppLayout title="Dashboard">
+    <AppLayout :title="t('app.dashboard')">
         <div>
-            <button v-if="can('edit posts')">تعديل المنشور</button>
+            <button v-if="can('edit posts')">{{ t('app.edit') }} المنشور</button>
             <button v-if="hasRole('admin')">زر خاص للمشرفين</button>
         </div>
 

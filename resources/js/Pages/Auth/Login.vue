@@ -1,20 +1,23 @@
 <script setup>
 import { Head, Link, useForm } from "@inertiajs/vue3";
-import { Button } from "@/Components/ui/button";
+import { Button } from "@/components/ui/button";
 import {
     Card,
     CardContent,
     CardHeader,
     CardTitle,
-} from "@/Components/ui/card";
-import { Input } from "@/Components/ui/input";
-import { Label } from "@/Components/ui/label";
-import { Checkbox } from "@/Components/ui/checkbox";
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Checkbox } from "@/components/ui/checkbox";
+import { useI18n } from 'vue-i18n'
 
 defineProps({
     canResetPassword: Boolean,
     status: String,
 });
+
+const { t } = useI18n()
 
 const form = useForm({
     email: "",
@@ -33,7 +36,7 @@ const submit = () => {
 </script>
 
 <template>
-    <Head title="Login" />
+    <Head :title="t('app.login')" />
 
     <div
         class="flex min-h-svh flex-col items-center justify-center gap-6 bg-muted p-6 md:p-10"
@@ -42,7 +45,7 @@ const submit = () => {
             <div class="flex flex-col gap-6">
                 <Card>
                     <CardHeader class="text-center">
-                        <CardTitle class="text-xl">  Welcome back</CardTitle>
+                        <CardTitle class="text-xl">{{ t('app.welcome') }} back</CardTitle>
                     </CardHeader>
                     <CardContent>
                         <form @submit.prevent="submit">
@@ -96,7 +99,7 @@ const submit = () => {
                                 </div>
 
                                     <Button type="submit" class="w-full">
-                                        Login
+                                        {{ t('app.login') }}
                                     </Button>
                                 </div>
                                 <div class="text-center text-sm">
@@ -105,7 +108,7 @@ const submit = () => {
                                         :href="route('register')"
                                         class="underline underline-offset-4"
                                     >
-                                        Sign up
+                                        {{ t('app.register') }}
                                     </Link>
                                 </div>
                             </div>
